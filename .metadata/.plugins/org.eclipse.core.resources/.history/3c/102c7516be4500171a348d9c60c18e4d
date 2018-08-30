@@ -1,0 +1,28 @@
+
+public class MazePositionController {
+	
+		public double ParallelWall(int DistanceFromLeftWall, int InitialDistanceFromLeftWall, double Distance_Travelled)
+		{
+			double diff = DistanceFromLeftWall - InitialDistanceFromLeftWall;
+			System.out.println("Difference is " + diff);
+			double div = diff/Distance_Travelled;
+			System.out.println("Division " + div);
+			double angle = Math.toDegrees(Math.asin(div));
+			System.out.println("angle " + angle);
+			return angle;
+		}
+		
+		public double DirectToMidPoint(int left, int right)
+		{
+			float width_of_track = left+right+MazeMovementController.wheel_base;
+			float midpoint = width_of_track/2;
+			float bot_parallel_axis_left = (MazeMovementController.wheel_base/2) + left;
+			float bot_parallel_axis_right = (MazeMovementController.wheel_base/2) + right;
+			float bot_parallel_axis = ((MazeMovementController.wheel_base/2) + left + (MazeMovementController.wheel_base/2) + right)/2;
+			double midpoint_angle_correction = Math.toDegrees(Math.asin(midpoint - bot_parallel_axis));
+			return midpoint_angle_correction;
+		}
+
+}
+
+	

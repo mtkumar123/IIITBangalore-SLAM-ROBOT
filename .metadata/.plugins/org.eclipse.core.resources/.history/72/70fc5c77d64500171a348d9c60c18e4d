@@ -1,0 +1,19 @@
+
+public class Thread1 implements Runnable{
+	
+	Thread1()
+	{
+		Thread t = new Thread(this, "Thread 1");
+		t.start();
+	}
+	
+	public void run(){
+		for(int i=0; i<100; i++)
+		{
+			System.out.println("Thread 1 " + i);
+		}
+	}
+	
+	
+
+}

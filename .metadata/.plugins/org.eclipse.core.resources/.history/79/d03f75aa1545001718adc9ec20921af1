@@ -1,0 +1,30 @@
+import lejos.nxt.Motor;
+import lejos.robotics.navigation.DifferentialPilot;
+
+
+public class MazeMovementController {
+
+	DifferentialPilot rover = new DifferentialPilot(4.5f,14.f,Motor.A, Motor.B);
+	
+
+	public void initialize()
+	{
+		rover.setTravelSpeed(3.0f);
+		rover.setRotateSpeed(180);
+	}
+	
+	public void forward()
+	{
+		rover.travel(-10.0f);
+	}
+	public void backward()
+	{
+		rover.travel(10.0f);
+	}
+
+	public void Rotation_Correction(double angle)
+	{
+		System.out.println("Correcting Angle");
+		rover.rotate(angle);
+	}
+}

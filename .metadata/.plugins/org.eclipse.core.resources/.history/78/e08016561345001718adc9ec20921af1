@@ -1,0 +1,17 @@
+
+public class MazePositionController {
+	
+		public double ParallelWall(int DistanceFromLeftWall, int InitialDistanceFromLeftWall, int Distance_Travelled)
+		{
+			int diff = DistanceFromLeftWall - InitialDistanceFromLeftWall;
+			System.out.println("Difference is " + diff);
+			double div = diff/Distance_Travelled;
+			System.out.println("Division " + div);
+			double angle = Math.asin(div);
+			System.out.println("angle " + angle);
+			return angle;
+		}
+
+}
+
+	

@@ -1,0 +1,45 @@
+import lejos.nxt.Motor;
+import lejos.nxt.SensorPort;
+import lejos.nxt.UltrasonicSensor;
+
+
+public class UltraSensePC {
+
+	/**
+	 * @param args
+	 */
+	int average;
+	int arr[];
+	int forward = 12;
+	int left = 90;
+	int right = -270;
+	static UltrasonicSensor us = new UltrasonicSensor(SensorPort.S1);
+	        
+	public void initialize()
+	{
+		Motor.C.setSpeed(90);
+		Motor.C.rotateTo(forward);
+		us.continuous();
+		arr = new int[8];
+		average=0;
+	}
+	
+	public int getReadingsInCardinalDirections(int direction)
+	{
+
+			Motor.C.rotateTo(direction);
+			for(int i=0;i<8;i++)
+			{
+				arr[i] = us.getDistance();
+				average = average + arr[i];
+			}
+			average = average/8;
+			return average;
+	}
+	
+	public int ReadingFromWall()
+	{
+		Motor.C.rotateTo(left);
+		return us.getDistance();
+	}
+}

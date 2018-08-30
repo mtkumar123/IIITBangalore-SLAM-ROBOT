@@ -1,0 +1,27 @@
+import lejos.nxt.SensorPort;
+import lejos.nxt.UltrasonicSensor;
+
+
+public class UltraSensePC {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		UltrasonicSensor us = new UltrasonicSensor(SensorPort.S1);
+		us.setMode(us.MODE_PING);
+		System.out.println("hello");
+		System.out.println(us.getDistance());
+		int arr[] = new int[8];
+		
+		int i = us.getDistances(arr);
+		System.out.println(i);
+			for(int j=0;j<8;j++)
+			System.out.println(arr[j]);
+		
+
+	}
+
+}

@@ -1,0 +1,27 @@
+import java.io.IOException;
+
+import lejos.pc.comm.*;
+
+
+public class testpc {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		try{
+			NXTComm nxtComm = NXTCommFactory.createNXTComm(NXTCommFactory.USB);
+			NXTInfo[] nxtInfo = nxtComm.search("");
+			nxtComm.open(nxtInfo[0]);
+			
+		}
+		catch(NXTCommException e)
+		{
+			throw new IOException("Failed to connect " + e.toString());
+		}
+
+	}
+
+}

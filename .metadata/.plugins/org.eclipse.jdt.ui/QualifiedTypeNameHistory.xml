@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="lejos.nxt.Button"/>
+<fullyQualifiedTypeName name="lejos.pc.comm.NXTCommFactory"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="lejos.nxt.NXT"/>
+<fullyQualifiedTypeName name="java.io.InputStream"/>
+<fullyQualifiedTypeName name="java.io.OutputStream"/>
+<fullyQualifiedTypeName name="java.io.DataOutputStream"/>
+<fullyQualifiedTypeName name="java.io.DataInputStream"/>
+<fullyQualifiedTypeName name="lejos.robotics.navigation.DifferentialPilot"/>
+<fullyQualifiedTypeName name="lejos.nxt.UltrasonicSensor"/>
+<fullyQualifiedTypeName name="lejos.nxt.SensorPort"/>
+<fullyQualifiedTypeName name="lejos.nxt.MotorPort"/>
+<fullyQualifiedTypeName name="lejos.nxt.NXTMotor"/>
+<fullyQualifiedTypeName name="lejos.nxt.Motor"/>
+</qualifiedTypeNameHistroy>

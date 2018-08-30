@@ -1,0 +1,76 @@
+import lejos.nxt.Motor;
+
+
+public class MazeRunner {
+
+	/**
+	 * @param args
+	 */
+	
+	static UltraSensePC usp;
+	static MazeMovementController bot;
+	static MazePositionController pos;
+	static int cardinal_distance[];
+	static int DistanceFromLeftWall;
+	static int DistanceFromRightWall;
+	static final int forward = 0;
+	static final int left = -95;
+	static final int right = 90;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i=0;
+		
+		usp = new UltraSensePC();
+		usp.initialize();
+		
+		bot = new MazeMovementController();
+		pos = new MazePositionController();
+		
+		cardinal_distance = new int[3];
+		
+		
+		
+		
+		
+		while(i<5)
+		{
+		Cardinal_Sense();
+		bot.forward();
+		DistanceFromLeftWall = usp.ReadingFromWall();
+		
+		//System.out.println("Distance from left wall " + DistanceFromLeftWall);
+		
+		double angle_correction = pos.ParallelWall(DistanceFromLeftWall, cardinal_distance[1], 10.0);
+		
+		//System.out.println("Angle of correction " + angle_correction);
+		
+		bot.Rotation_Correction(angle_correction);
+		i++;
+		}
+		
+		
+		
+		
+		
+		
+	}
+	
+	public static void Cardinal_Sense()
+	{
+		cardinal_distance[0] = usp.getReadingsInCardinalDirections(forward);
+		
+		//System.out.println("Forward " + cardinal_distance[0]);
+		
+		cardinal_distance[1] = usp.getReadingsInCardinalDirections(left);
+		
+		//System.out.println("Left " + cardinal_distance[1]);
+		
+		cardinal_distance[2] = usp.getReadingsInCardinalDirections(right);
+		//System.out.println("Right " + cardinal_distance[2]);
+	}	
+
+}
+
+	

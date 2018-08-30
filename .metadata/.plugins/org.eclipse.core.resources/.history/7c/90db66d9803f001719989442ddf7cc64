@@ -1,0 +1,21 @@
+import lejos.pc.comm.*;
+
+
+public class testpc {
+
+	/**
+	 * @param args
+	 *
+	 */
+	public static void main(String[] args) 
+	{
+		NXTConnector link = new NXTConnector();
+		if(!link.connectTo())
+		{
+			System.out.println("No usb is being found");
+		}
+		else
+			System.out.println("Detected");
+	}
+
+}

@@ -1,0 +1,85 @@
+import lejos.nxt.Motor;
+import lejos.nxt.SensorPort;
+import lejos.nxt.UltrasonicSensor;
+
+
+public class UltraSensePC implements Runnable{
+
+	/**
+	 * @param args
+	 */
+	
+	static final int forward = 0;
+	static final int left = -95;
+	static final int right = 90;
+	static UltrasonicSensor us = new UltrasonicSensor(SensorPort.S1);
+	Thread t;
+	        
+	public void initialize()
+	{
+		Motor.C.resetTachoCount();
+		Motor.C.setSpeed(45);
+		Motor.C.rotateTo(forward);
+		us.continuous();
+	}
+	
+	
+	public void reinitialize()
+	{
+		System.out.println("In reinitialize");
+		t = new Thread(this, "Reinitizalizing");
+		System.out.println("Created Thread");
+		t.start();
+	}
+	
+	
+	public int getReadingsInCardinalDirections(int direction)
+	{
+		int average = 0;
+
+			Motor.C.rotateTo(direction);
+			for(int i=0;i<10;i++)
+			{
+				
+				//System.out.println("Inside UltraSensePC the distance is" + us.getDistance());
+				
+				average = average + us.getDistance();
+			}
+			average = average/10;
+			return average;
+	}
+	
+	public int ReadingFromWall(int direction)
+	{
+		int average = 0;
+		
+		Motor.C.rotateTo(direction);
+		for(int i=0;i<10;i++)
+		{
+			
+			//System.out.println("Inside UltraSensePC the distance from left wall is" + us.getDistance());
+			
+			average = average + us.getDistance();
+		}
+		average = average/10;
+		return average;
+	}
+
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+		System.out.println("running second thread");
+		Motor.C.rotateTo(forward);
+		us.continuous();
+		for(int i=0; i<10000; i++)
+		{
+			System.out.println(i);
+		}
+		
+		
+	}
+	
+}
+

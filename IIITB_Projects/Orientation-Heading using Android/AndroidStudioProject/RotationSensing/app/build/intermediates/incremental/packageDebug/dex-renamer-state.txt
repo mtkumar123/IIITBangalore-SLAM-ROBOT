@@ -1,0 +1,7 @@
+#Thu Jun 15 09:55:19 IST 2017
+base.0=/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_587abcec07343061a0fe43fe4a873ea9d7ee9c8c
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0b0518266db2873752a4404fa263ddb442ed10e7/classes.dex
+base.1=/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_0b0518266db2873752a4404fa263ddb442ed10e7
+file.0=/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_587abcec07343061a0fe43fe4a873ea9d7ee9c8c/classes.dex

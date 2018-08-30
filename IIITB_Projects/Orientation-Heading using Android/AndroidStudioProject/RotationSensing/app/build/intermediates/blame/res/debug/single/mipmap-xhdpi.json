@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher_round.png",
+        "source": "/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
+        "source": "/Users/manojkumar/AndroidStudioProjects/RotationSensing/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    }
+]
